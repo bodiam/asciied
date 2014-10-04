@@ -922,7 +922,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
 				INFOPLIST_FILE = "MacDown/MacDown-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = MacDown;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -938,7 +937,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
 				INFOPLIST_FILE = "MacDown/MacDown-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = MacDown;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -967,7 +965,6 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MacDown-ggdtxvuybojeqbhjydkhilziizrv/Build/Products/Debug",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = MacDownTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -992,7 +989,6 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MacDown-ggdtxvuybojeqbhjydkhilziizrv/Build/Products/Debug",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = MacDownTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
