@@ -545,7 +545,7 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     NSString *fileName = self.presumedFileName;
     if (fileName)
     {
-        fileName = [fileName stringByAppendingPathExtension:@"md"];
+        fileName = [fileName stringByAppendingPathExtension:@"asciidoc"];
         savePanel.nameFieldStringValue = fileName;
     }
     savePanel.allowedFileTypes = nil;   // Allow all extensions.
