@@ -458,12 +458,12 @@ UlLine   =      "____" '_'* | Spacechar '_'+ &Spacechar
 #Strong = StrongStar | StrongUl
 Strong = StrongStar
 
-StarOpen =   !StarLine < "*" > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
-StarClose =  !Spacechar !Newline Inline < "*" > { $$ = elem(pmh_NO_TYPE); }
+OneStarOpen =   !StarLine < "*" > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
+OneStarClose =  !Spacechar !Newline Inline < "*" > { $$ = elem(pmh_NO_TYPE); }
 
-StrongStar =    s:StarOpen
-                ( !StarClose Inline )*
-                StarClose
+StrongStar =    s:OneStarOpen
+                ( !OneStarClose Inline )*
+                OneStarClose
                 { ADD(elem_s(pmh_STRONG)); }
 
 #----TwoUlOpen =     !UlLine < "__" > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
