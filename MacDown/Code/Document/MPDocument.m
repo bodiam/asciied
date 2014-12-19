@@ -952,7 +952,7 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     if (editorFrame.size.width != clipWidth)
     {
         editorFrame.size.width = clipWidth;
-        self.editor.frame = editorFrame;
+        //self.editor.frame = editorFrame;
     }
     [self syncScrollers];
     self.shouldHandleBoundsChange = YES;
