@@ -398,7 +398,7 @@ Inline  = Str
         | Endline
 #        | UlOrStarLine
         | Space
-#        | Strong
+        | Strong
 #        | Emph
 #        | Image
 #        | Link
@@ -433,9 +433,9 @@ Symbol =    SpecialChar
 
 ## This keeps the parser from getting bogged down on long strings of '*' or '_',
 ## or strings of '*' or '_' with space on each side:
-#UlOrStarLine =  (UlLine | StarLine)
-#StarLine =      "****" '*'* | Spacechar '*'+ &Spacechar
-#UlLine   =      "____" '_'* | Spacechar '_'+ &Spacechar
+UlOrStarLine =  (UlLine | StarLine)
+StarLine =      "****" '*'* | Spacechar '*'+ &Spacechar
+UlLine   =      "____" '_'* | Spacechar '_'+ &Spacechar
 
 #Emph =      EmphStar | EmphUl
 
@@ -456,22 +456,23 @@ Symbol =    SpecialChar
 #            { ADD(elem_s(pmh_EMPH)); }
 
 #Strong = StrongStar | StrongUl
+Strong = StrongStar
 
-#TwoStarOpen =   !StarLine < "**" > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
-#TwoStarClose =  !Spacechar !Newline Inline < "**" > { $$ = elem(pmh_NO_TYPE); }
+StarOpen =   !StarLine < "*" > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
+StarClose =  !Spacechar !Newline Inline < "*" > { $$ = elem(pmh_NO_TYPE); }
 
-#StrongStar =    s:TwoStarOpen
-#                ( !TwoStarClose Inline )*
-#                TwoStarClose
-#                { ADD(elem_s(pmh_STRONG)); }
+StrongStar =    s:StarOpen
+                ( !StarClose Inline )*
+                StarClose
+                { ADD(elem_s(pmh_STRONG)); }
 
-#TwoUlOpen =     !UlLine < "__" > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
-#TwoUlClose =    !Spacechar !Newline Inline < "__" > !Alphanumeric { $$ = elem(pmh_NO_TYPE); }
+#----TwoUlOpen =     !UlLine < "__" > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
+#----TwoUlClose =    !Spacechar !Newline Inline < "__" > !Alphanumeric { $$ = elem(pmh_NO_TYPE); }
 
-#StrongUl =  s:TwoUlOpen
-#            ( !TwoUlClose Inline )*
-#            TwoUlClose
-#            { ADD(elem_s(pmh_STRONG)); }
+#----StrongUl =  s:TwoUlOpen
+#----            ( !TwoUlClose Inline )*
+#----            TwoUlClose
+#----            { ADD(elem_s(pmh_STRONG)); }
 
 #Image = '!' ( ExplicitLink | ReferenceLink )
 #        {
