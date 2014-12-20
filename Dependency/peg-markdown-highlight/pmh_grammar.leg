@@ -399,7 +399,7 @@ Inline  = Str
 #        | UlOrStarLine
         | Space
         | Strong
-#        | Emph
+        | Emph
 #        | Image
 #        | Link
 #        | NoteReference
@@ -437,7 +437,7 @@ UlOrStarLine =  (UlLine | StarLine)
 StarLine =      "****" '*'* | Spacechar '*'+ &Spacechar
 UlLine   =      "____" '_'* | Spacechar '_'+ &Spacechar
 
-#Emph =      EmphStar | EmphUl
+Emph =       EmphUl
 
 #OneStarOpen  =  !StarLine < '*' > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
 #OneStarClose =  !Spacechar !Newline Inline !StrongStar < '*' > { $$ = elem(pmh_NO_TYPE); }
@@ -447,13 +447,13 @@ UlLine   =      "____" '_'* | Spacechar '_'+ &Spacechar
 #            OneStarClose
 #            { ADD(elem_s(pmh_EMPH)); }
 
-#OneUlOpen  =  !UlLine < '_' > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
-#OneUlClose =  !Spacechar !Newline Inline !StrongUl < '_' > !Alphanumeric { $$ = elem(pmh_NO_TYPE); }
+OneUlOpen  =  !UlLine < '_' > !Spacechar !Newline { $$ = elem(pmh_NO_TYPE); }
+OneUlClose =  !Spacechar !Newline Inline < '_' > { $$ = elem(pmh_NO_TYPE); }
 
-#EmphUl =    s:OneUlOpen
-#            ( !OneUlClose Inline )*
-#            OneUlClose
-#            { ADD(elem_s(pmh_EMPH)); }
+EmphUl =    s:OneUlOpen
+            ( !OneUlClose Inline )*
+            OneUlClose
+            { ADD(elem_s(pmh_EMPH)); }
 
 #Strong = StrongStar | StrongUl
 Strong = StrongStar
