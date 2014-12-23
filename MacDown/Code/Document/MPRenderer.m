@@ -401,6 +401,44 @@ static void MPFreeHTMLRenderer(hoedown_renderer *htmlRenderer)
         nextAction = self.parseDelayTimer.userInfo[@"next"];
         [self.parseDelayTimer invalidate];
     }
+    
+//    NSString *asciidocString = [self.dataSource rendererMarkdown:self];
+    
+    
+
+    NSMutableString *html = [[NSMutableString alloc] init];
+    NSString *header =
+    @"<div id='yourmother'></div>\n"
+    @"<script src='opal.min.js'></script>\n"
+    @"<script src='asciidoctor.js'></script>\n"
+    @"<script>\n";
+    [html appendString:header];
+	[html appendString:@"content = '"];
+    NSData *data = [[self.dataSource rendererMarkdown:self] dataUsingEncoding:NSUTF8StringEncoding];
+    [html appendString:[data base64Encoding]];
+    [html appendString:@"';\n"];
+    NSString *footer =
+    @"var options = Opal.hash2(['attributes'], {attributes: ['showtitle']});\n"
+    @"var html = Opal.Asciidoctor.$convert(atob(content), options);\n"
+    @"document.getElementById('yourmother').innerHTML = html;\n"
+    @"</script>\n";
+
+    [html appendString:footer];
+    
+    self.currentHtml = html;
+    
+    if (nextAction)
+        nextAction();
+}
+
+- (void)parse2
+{
+    void(^nextAction)() = nil;
+    if (self.parseDelayTimer.isValid)
+    {
+        nextAction = self.parseDelayTimer.userInfo[@"next"];
+        [self.parseDelayTimer invalidate];
+    }
 
     [self.currentLanguages removeAllObjects];
 

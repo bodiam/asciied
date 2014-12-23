@@ -905,8 +905,15 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     NSURL *baseUrl = self.fileURL;
     if (!baseUrl)
         baseUrl = self.preferences.htmlDefaultDirectoryUrl;
+    
+    //
+//    baseUrl = [[NSURL alloc] initFileURLWithPath:@"/Users/bartvk/tmp/test_asciidoctor" isDirectory:YES];
+    NSString *path = [[NSBundle mainBundle] resourcePath];
+    baseUrl = [NSURL fileURLWithPath:path];
     if (!self.printing)
         [self.preview.mainFrame loadHTMLString:html baseURL:baseUrl];
+    NSLog(@"-------------------------------------------------------------------------------------");
+    NSLog(@"HTML:\n[%@]\n", html);
 }
 
 
