@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1FA6DE201941CC9E000409FB"
-               BuildableName = "MacDown.app"
+               BuildableName = "asciied.app"
                BlueprintName = "MacDown"
                ReferencedContainer = "container:MacDown.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FA6DE201941CC9E000409FB"
-            BuildableName = "MacDown.app"
+            BuildableName = "asciied.app"
             BlueprintName = "MacDown"
             ReferencedContainer = "container:MacDown.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FA6DE201941CC9E000409FB"
-            BuildableName = "MacDown.app"
+            BuildableName = "asciied.app"
             BlueprintName = "MacDown"
             ReferencedContainer = "container:MacDown.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FA6DE201941CC9E000409FB"
-            BuildableName = "MacDown.app"
+            BuildableName = "asciied.app"
             BlueprintName = "MacDown"
             ReferencedContainer = "container:MacDown.xcodeproj">
          </BuildableReference>
