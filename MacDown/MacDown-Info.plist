@@ -9,7 +9,7 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>md</string>
+				<string>asciidoc</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>MarkdownDocument</string>
@@ -18,7 +18,7 @@
 				<string>text/x-markdown</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Markdown</string>
+			<string>asciidoc</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSItemContentTypes</key>
