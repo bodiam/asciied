@@ -32,6 +32,6 @@ for i in $pointsizes; do
 
     size1x=$i
     size2x=$(($size1x * 2))
-    convert "$1" -resize ${size1x}x${size1x} "${target}_${size1x}${ext}"
-    convert "$1" -resize ${size2x}x${size2x} "${target}_${size1x}@2x${ext}"
+    convert "$1" -resize ${size1x}x${size1x}\! "${target}_${size1x}${ext}"
+    convert "$1" -resize ${size2x}x${size2x}\! "${target}_${size1x}@2x${ext}"
 done
