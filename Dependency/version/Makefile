@@ -6,6 +6,6 @@ version.h:
 .PHONY: ALL clean distclean
 
 clean:
-	rm version.h
+	rm -f version.h
 
 distclean: clean
