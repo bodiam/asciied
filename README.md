@@ -1,7 +1,10 @@
 # asciied
 
-We are working on asciied,  an open source [asciidoc](http://www.asciidoc.org) editor for OS X,
-forked from [MacDown](http://macdown.uranusjr.com).
+We are working on asciied,  an open source [asciidoc](http://www.asciidoc.org)
+editor for OS X, forked from [MacDown](http://macdown.uranusjr.com).
+
+Project status: this is all in development, and it's not near even an
+alpha-quality release.
 
 ## License
 
@@ -14,11 +17,12 @@ You may find full text of licenses about third-party components in the
 
 ## Development
 
-If you wish to build MacDown yourself, you will need the following components/tools:
+If you wish to build asciied yourself, you will need the following
+components/tools:
 
 * OS X 10.8 SDK
 * Git
-* [CocoaPods](http://cocoapods.org) [^1]
+* [CocoaPods](http://cocoapods.org)
 
 After cloning the repository, run the following commands inside the repository
 root (directory containing this `README.md` file):
