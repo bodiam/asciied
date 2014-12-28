@@ -3,7 +3,7 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
 
-target "MacDown" do
+target "asciied" do
   pod 'handlebars-objc', '~> 1.3'
   pod 'hoedown', '~> 3.0'
   pod 'JJPluralForm', '~> 2.1'      # Plural form localization.
@@ -14,7 +14,7 @@ target "MacDown" do
   pod 'Sparkle', '< 1.8'            # Updater.
 end
 
-target "MacDownTests" do
+target "asciiedTests" do
   pod 'PAPreferences', '~> 0.4'
 end
 

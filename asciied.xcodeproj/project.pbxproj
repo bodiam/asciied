@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19FAF0735AE9707E916DAB18 /* libPods-asciiedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 844577C9DC60B3B8756B2263 /* libPods-asciiedTests.a */; };
 		1F002A23195B3DAE008B8D93 /* MPRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F002A22195B3DAE008B8D93 /* MPRenderer.m */; };
 		1F0D9D65194AC7CF008E1856 /* NSString+Lookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D5F194AC7CF008E1856 /* NSString+Lookup.m */; };
 		1F0D9D66194AC7CF008E1856 /* NSTextView+Autocomplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D61194AC7CF008E1856 /* NSTextView+Autocomplete.m */; };
@@ -75,6 +76,7 @@
 		905EF1A9196164CA00FC3CE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905EF1A8196164CA00FC3CE9 /* Foundation.framework */; };
 		905EF1B7196164F300FC3CE9 /* macdown in Copy Command Line Utility */ = {isa = PBXBuildFile; fileRef = 905EF1A7196164CA00FC3CE9 /* macdown */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B49728377A904875B2963C38 /* libPods-MacDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */; };
+		C99D6C9D33E311686375454F /* libPods-asciied.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E11AC5014F9B37408DF7C63F /* libPods-asciied.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,7 +164,7 @@
 		1F0D9DA9194AC8CB008E1856 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localization/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1F0D9DAC194AC8EF008E1856 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1F0D9DAE194AC905008E1856 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Code/main.m; sourceTree = "<group>"; };
-		1F0D9DB5194ACA33008E1856 /* MacDown-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MacDown-Prefix.pch"; path = "Code/MacDown-Prefix.pch"; sourceTree = "<group>"; };
+		1F0D9DB5194ACA33008E1856 /* asciied-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "asciied-Prefix.pch"; path = "Code/asciied-Prefix.pch"; sourceTree = "<group>"; };
 		1F0F3BFB195F75F200FC0B3B /* MathJax */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MathJax; path = Resources/MathJax; sourceTree = "<group>"; };
 		1F23A91F19928E650052DB78 /* MPMathJaxListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMathJaxListener.h; sourceTree = "<group>"; };
 		1F23A92019928E650052DB78 /* MPMathJaxListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMathJaxListener.m; sourceTree = "<group>"; };
@@ -203,7 +205,7 @@
 		1FA6DE271941CC9E000409FB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		1FA6DE281941CC9E000409FB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1FA6DE291941CC9E000409FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1FA6DE451941CC9E000409FB /* MacDownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacDownTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA6DE451941CC9E000409FB /* asciiedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = asciiedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBBD4BD194C952300BB3C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MacDown/Localization/Base.lproj/MPExportPanelAccessoryViewController.xib; sourceTree = SOURCE_ROOT; };
 		1FBBD4C9194CA35900BB3C88 /* hoedown_html_patch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hoedown_html_patch.h; sourceTree = "<group>"; };
 		1FBBD4CA194CA36500BB3C88 /* hoedown_html_patch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hoedown_html_patch.c; sourceTree = "<group>"; };
@@ -215,7 +217,7 @@
 		1FC29F5B1944FC2600D616C7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1FCD71131A20BA3A00C028B5 /* version.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = version.xcodeproj; sourceTree = "<group>"; };
 		1FCD711A1A20BE2F00C028B5 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = version.h; path = Dependency/version/version.h; sourceTree = SOURCE_ROOT; };
-		1FCDCA301944F96E00B1F966 /* MacDownTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MacDownTests-Info.plist"; sourceTree = "<group>"; };
+		1FCDCA301944F96E00B1F966 /* asciiedTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "asciiedTests-Info.plist"; sourceTree = "<group>"; };
 		1FCDCA311944F96E00B1F966 /* MPPreferencesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPreferencesTests.m; sourceTree = "<group>"; };
 		1FCDCA331944F96E00B1F966 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1FCE066319633D6B00DC83B4 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Resources/Data; sourceTree = "<group>"; };
@@ -232,10 +234,13 @@
 		1FFEB32919737D6E00B2254F /* YAMLSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAMLSerialization.h; sourceTree = "<group>"; };
 		1FFEB32A19737D6E00B2254F /* YAMLSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAMLSerialization.m; sourceTree = "<group>"; };
 		1FFF301C1948A5320009AF24 /* MPStringLookupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStringLookupTests.m; sourceTree = "<group>"; };
+		37487D3415326CCB4691A04A /* Pods-asciiedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-asciiedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-asciiedTests/Pods-asciiedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		481332E4A369446F177A8DF0 /* Pods-MacDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacDown/Pods-MacDown.release.xcconfig"; sourceTree = "<group>"; };
 		4AFCF7AEBCE081BD528ABC3D /* libPods-macdown-cmd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-macdown-cmd.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		539CB02F873DAE9719B94AB7 /* Pods-asciied.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-asciied.release.xcconfig"; path = "Pods/Target Support Files/Pods-asciied/Pods-asciied.release.xcconfig"; sourceTree = "<group>"; };
 		632F686FDE66C78EBA2ABB7B /* Pods-macdown-cmd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macdown-cmd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macdown-cmd/Pods-macdown-cmd.debug.xcconfig"; sourceTree = "<group>"; };
 		7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		844577C9DC60B3B8756B2263 /* libPods-asciiedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-asciiedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8919B61D1A4AF66F00649FC9 /* asciidoctor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = asciidoctor.js; path = Dependency/asciidoctor/asciidoctor.js; sourceTree = SOURCE_ROOT; };
 		8919B61E1A4AF66F00649FC9 /* opal.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = opal.min.js; path = Dependency/asciidoctor/opal.min.js; sourceTree = SOURCE_ROOT; };
 		905EF1A7196164CA00FC3CE9 /* macdown */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = macdown; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,7 +248,10 @@
 		A9105A2DE3384B0DB400BAD1 /* Pods-MacDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacDown/Pods-MacDown.debug.xcconfig"; sourceTree = "<group>"; };
 		AEAF42BBDCEC4012B5092BB3 /* libPods-MacDownTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDownTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCDF2E157FE72C2ED7438DD /* Pods-MacDownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDownTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8C75162802AF864E98EA697 /* Pods-asciied.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-asciied.debug.xcconfig"; path = "Pods/Target Support Files/Pods-asciied/Pods-asciied.debug.xcconfig"; sourceTree = "<group>"; };
+		E11AC5014F9B37408DF7C63F /* libPods-asciied.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-asciied.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E352E0A2562DCE60302D805E /* Pods-MacDownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDownTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E491EE8CC7A52F76CC710A74 /* Pods-asciiedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-asciiedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-asciiedTests/Pods-asciiedTests.release.xcconfig"; sourceTree = "<group>"; };
 		E87590C145FF88E3F084D54C /* Pods-macdown-cmd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macdown-cmd.release.xcconfig"; path = "Pods/Target Support Files/Pods-macdown-cmd/Pods-macdown-cmd.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +264,7 @@
 				1FF207631941CF22005B5654 /* WebKit.framework in Frameworks */,
 				1FA6DE251941CC9E000409FB /* Cocoa.framework in Frameworks */,
 				B49728377A904875B2963C38 /* libPods-MacDown.a in Frameworks */,
+				C99D6C9D33E311686375454F /* libPods-asciied.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +275,7 @@
 				1FA6DE481941CC9E000409FB /* Cocoa.framework in Frameworks */,
 				1FC29F5C1944FC2600D616C7 /* XCTest.framework in Frameworks */,
 				5318159056384894AA42DB4F /* libPods-MacDownTests.a in Frameworks */,
+				19FAF0735AE9707E916DAB18 /* libPods-asciiedTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0D9DAE194AC905008E1856 /* main.m */,
-				1F0D9DB5194ACA33008E1856 /* MacDown-Prefix.pch */,
+				1F0D9DB5194ACA33008E1856 /* asciied-Prefix.pch */,
 			);
 			name = "Additional Sources";
 			sourceTree = "<group>";
@@ -452,7 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				1FA6DE211941CC9E000409FB /* asciied.app */,
-				1FA6DE451941CC9E000409FB /* MacDownTests.xctest */,
+				1FA6DE451941CC9E000409FB /* asciiedTests.xctest */,
 				905EF1A7196164CA00FC3CE9 /* macdown */,
 			);
 			name = Products;
@@ -471,6 +481,8 @@
 				7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */,
 				AEAF42BBDCEC4012B5092BB3 /* libPods-MacDownTests.a */,
 				4AFCF7AEBCE081BD528ABC3D /* libPods-macdown-cmd.a */,
+				E11AC5014F9B37408DF7C63F /* libPods-asciied.a */,
+				844577C9DC60B3B8756B2263 /* libPods-asciiedTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -544,7 +556,7 @@
 		1FCDCA371944F97800B1F966 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1FCDCA301944F96E00B1F966 /* MacDownTests-Info.plist */,
+				1FCDCA301944F96E00B1F966 /* asciiedTests-Info.plist */,
 				1FCDCA321944F96E00B1F966 /* InfoPlist.strings */,
 				1FFEB31F1972B04D00B2254F /* test.txt */,
 				1FFEB31A19729FD500B2254F /* test.js */,
@@ -596,6 +608,10 @@
 				BDCDF2E157FE72C2ED7438DD /* Pods-MacDownTests.release.xcconfig */,
 				632F686FDE66C78EBA2ABB7B /* Pods-macdown-cmd.debug.xcconfig */,
 				E87590C145FF88E3F084D54C /* Pods-macdown-cmd.release.xcconfig */,
+				C8C75162802AF864E98EA697 /* Pods-asciied.debug.xcconfig */,
+				539CB02F873DAE9719B94AB7 /* Pods-asciied.release.xcconfig */,
+				37487D3415326CCB4691A04A /* Pods-asciiedTests.debug.xcconfig */,
+				E491EE8CC7A52F76CC710A74 /* Pods-asciiedTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -603,9 +619,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FA6DE201941CC9E000409FB /* MacDown */ = {
+		1FA6DE201941CC9E000409FB /* asciied */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FA6DE551941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDown" */;
+			buildConfigurationList = 1FA6DE551941CC9E000409FB /* Build configuration list for PBXNativeTarget "asciied" */;
 			buildPhases = (
 				A4C68C7905CF45C89A0CC47D /* Check Pods Manifest.lock */,
 				1FA6DE1D1941CC9E000409FB /* Sources */,
@@ -622,14 +638,14 @@
 				905EF1B5196164DD00FC3CE9 /* PBXTargetDependency */,
 				1FE2197819534A5D00DB931F /* PBXTargetDependency */,
 			);
-			name = MacDown;
+			name = asciied;
 			productName = MarkPad;
 			productReference = 1FA6DE211941CC9E000409FB /* asciied.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1FA6DE441941CC9E000409FB /* MacDownTests */ = {
+		1FA6DE441941CC9E000409FB /* asciiedTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FA6DE581941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDownTests" */;
+			buildConfigurationList = 1FA6DE581941CC9E000409FB /* Build configuration list for PBXNativeTarget "asciiedTests" */;
 			buildPhases = (
 				694A3D57598E431C90D512B9 /* Check Pods Manifest.lock */,
 				1FA6DE411941CC9E000409FB /* Sources */,
@@ -642,9 +658,9 @@
 			dependencies = (
 				1FA6DE4A1941CC9E000409FB /* PBXTargetDependency */,
 			);
-			name = MacDownTests;
+			name = asciiedTests;
 			productName = MarkPadTests;
-			productReference = 1FA6DE451941CC9E000409FB /* MacDownTests.xctest */;
+			productReference = 1FA6DE451941CC9E000409FB /* asciiedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		905EF1A6196164CA00FC3CE9 /* macdown-cmd */ = {
@@ -673,16 +689,16 @@
 		1FA6DE191941CC9E000409FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = MP;
+				CLASSPREFIX = AE;
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Tzu-ping Chung ";
+				ORGANIZATIONNAME = asciied;
 				TargetAttributes = {
 					1FA6DE441941CC9E000409FB = {
 						TestTargetID = 1FA6DE201941CC9E000409FB;
 					};
 				};
 			};
-			buildConfigurationList = 1FA6DE1C1941CC9E000409FB /* Build configuration list for PBXProject "MacDown" */;
+			buildConfigurationList = 1FA6DE1C1941CC9E000409FB /* Build configuration list for PBXProject "asciied" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -705,8 +721,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				1FA6DE201941CC9E000409FB /* MacDown */,
-				1FA6DE441941CC9E000409FB /* MacDownTests */,
+				1FA6DE201941CC9E000409FB /* asciied */,
+				1FA6DE441941CC9E000409FB /* asciiedTests */,
 				905EF1A6196164CA00FC3CE9 /* macdown-cmd */,
 			);
 		};
@@ -813,7 +829,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDown/Pods-MacDown-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-asciied/Pods-asciied-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		694A3D57598E431C90D512B9 /* Check Pods Manifest.lock */ = {
@@ -843,7 +859,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacDownTests/Pods-MacDownTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-asciiedTests/Pods-asciiedTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8354BB1F574EFC071D91C89B /* Check Pods Manifest.lock */ = {
@@ -942,7 +958,7 @@
 		};
 		1FA6DE4A1941CC9E000409FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1FA6DE201941CC9E000409FB /* MacDown */;
+			target = 1FA6DE201941CC9E000409FB /* asciied */;
 			targetProxy = 1FA6DE491941CC9E000409FB /* PBXContainerItemProxy */;
 		};
 		1FE2197819534A5D00DB931F /* PBXTargetDependency */ = {
@@ -1126,12 +1142,12 @@
 		};
 		1FA6DE561941CC9E000409FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9105A2DE3384B0DB400BAD1 /* Pods-MacDown.debug.xcconfig */;
+			baseConfigurationReference = C8C75162802AF864E98EA697 /* Pods-asciied.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
+				GCC_PREFIX_HEADER = "MacDown/Code/asciied-Prefix.pch";
 				INFOPLIST_FILE = "MacDown/MacDown-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = asciied;
@@ -1142,12 +1158,12 @@
 		};
 		1FA6DE571941CC9E000409FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 481332E4A369446F177A8DF0 /* Pods-MacDown.release.xcconfig */;
+			baseConfigurationReference = 539CB02F873DAE9719B94AB7 /* Pods-asciied.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
+				GCC_PREFIX_HEADER = "MacDown/Code/asciied-Prefix.pch";
 				INFOPLIST_FILE = "MacDown/MacDown-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = asciied;
@@ -1158,7 +1174,7 @@
 		};
 		1FA6DE591941CC9E000409FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E352E0A2562DCE60302D805E /* Pods-MacDownTests.debug.xcconfig */;
+			baseConfigurationReference = 37487D3415326CCB4691A04A /* Pods-asciiedTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacDown.app/Contents/MacOS/MacDown";
 				CLANG_ENABLE_MODULES = NO;
@@ -1173,13 +1189,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "MacDownTests/MacDownTests-Info.plist";
+				INFOPLIST_FILE = "MacDownTests/asciiedTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MacDown-ggdtxvuybojeqbhjydkhilziizrv/Build/Products/Debug",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = MacDownTests;
+				PRODUCT_NAME = asciiedTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1187,7 +1203,7 @@
 		};
 		1FA6DE5A1941CC9E000409FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDCDF2E157FE72C2ED7438DD /* Pods-MacDownTests.release.xcconfig */;
+			baseConfigurationReference = E491EE8CC7A52F76CC710A74 /* Pods-asciiedTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacDown.app/Contents/MacOS/MacDown";
 				CLANG_ENABLE_MODULES = NO;
@@ -1198,13 +1214,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
-				INFOPLIST_FILE = "MacDownTests/MacDownTests-Info.plist";
+				INFOPLIST_FILE = "MacDownTests/asciiedTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MacDown-ggdtxvuybojeqbhjydkhilziizrv/Build/Products/Debug",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = MacDownTests;
+				PRODUCT_NAME = asciiedTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1239,7 +1255,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FA6DE1C1941CC9E000409FB /* Build configuration list for PBXProject "MacDown" */ = {
+		1FA6DE1C1941CC9E000409FB /* Build configuration list for PBXProject "asciied" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FA6DE531941CC9E000409FB /* Debug */,
@@ -1248,7 +1264,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FA6DE551941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDown" */ = {
+		1FA6DE551941CC9E000409FB /* Build configuration list for PBXNativeTarget "asciied" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FA6DE561941CC9E000409FB /* Debug */,
@@ -1257,7 +1273,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FA6DE581941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDownTests" */ = {
+		1FA6DE581941CC9E000409FB /* Build configuration list for PBXNativeTarget "asciiedTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FA6DE591941CC9E000409FB /* Debug */,
