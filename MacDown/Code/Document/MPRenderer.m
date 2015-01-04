@@ -15,6 +15,8 @@
 #import "NSString+Lookup.h"
 #import "MPUtilities.h"
 #import "MPAsset.h"
+#include <mach/mach.h>
+#include <mach/mach_time.h>
 
 
 static NSString * const kMPMathJaxCDN =
@@ -162,6 +164,7 @@ static inline BOOL MPAreNilableStringsEqual(NSString *s1, NSString *s2)
 @property (readonly) NSArray *stylesheets;
 @property (readonly) NSArray *scripts;
 @property (copy) NSString *currentHtml;
+@property NSMutableString *asciidoctorOutput;
 @property (strong) NSTimer *parseDelayTimer;
 @property int extensions;
 @property BOOL smartypants;
@@ -395,6 +398,13 @@ static void MPFreeHTMLRenderer(hoedown_renderer *htmlRenderer)
 
 - (void)parse
 {
+    [self parseWithJavascript];
+//    [self parseWithRuby];
+}
+
+// Calls the asciidoctor Ruby script that's installed via gem, homebrew or something
+- (void)parseWithRuby
+{
     void(^nextAction)() = nil;
     if (self.parseDelayTimer.isValid)
     {
@@ -402,13 +412,83 @@ static void MPFreeHTMLRenderer(hoedown_renderer *htmlRenderer)
         [self.parseDelayTimer invalidate];
     }
     
-//    NSString *asciidocString = [self.dataSource rendererMarkdown:self];
+	// Method from:
+    // http://stackoverflow.com/questions/25898549
+    // and:
+    // http://stackoverflow.com/questions/13100029
     
+    NSPipe *outputpipe = [NSPipe pipe];
+    NSPipe *inputpipe = [NSPipe pipe];
+    NSFileHandle *output = [outputpipe fileHandleForReading];
+    NSFileHandle *input = [inputpipe fileHandleForWriting];
     
+    self.asciidoctorOutput = [NSMutableString new];
+    NSTask* task = [[NSTask alloc] init];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receivedOutputFromAsciiDoctor:)
+                                                 name:NSFileHandleReadCompletionNotification
+                                               object:output];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(endOutputFromAsciiDoctor:)
+                                                 name:NSTaskDidTerminateNotification
+                                               object:task];
 
+    [task setLaunchPath:@"/usr/bin/asciidoctor"];
+	[task setArguments:@[@"-", @"-o", @"-"]]; // accept input from stdin, print output to stdout
+    [task setStandardOutput:outputpipe];
+    [task setStandardInput:inputpipe];
+    
+    // Get time for performance measurement
+	CFTimeInterval startTime = CFAbsoluteTimeGetCurrent();
+    [task launch];
+    [input writeData:[[self.dataSource rendererMarkdown:self] dataUsingEncoding:NSUTF8StringEncoding]];
+    [input closeFile];
+    
+    [output readInBackgroundAndNotify];
+    [task waitUntilExit];
+    CFTimeInterval duration = CFAbsoluteTimeGetCurrent() - startTime;
+    NSLog(@"Parse time: %f", duration);
+
+    if (nextAction)
+        nextAction();
+}
+
+-(void)receivedOutputFromAsciiDoctor:(NSNotification*)notification
+{
+//    NSLog(@"receivedOutputFromAsciiDoctor");
+    [[notification object] readInBackgroundAndNotify];
+    NSData *dataOutput = [[notification userInfo] objectForKey:NSFileHandleNotificationDataItem];
+    NSString *dataString = [[NSString alloc] initWithData:dataOutput encoding:NSStringEncodingConversionAllowLossy];
+    [self.asciidoctorOutput appendString:dataString];
+//    NSLog(@"Length: %zd", [self.asciidoctorOutput length]);
+}
+
+- (void)endOutputFromAsciiDoctor:(NSNotification *)notification
+{
+//    NSLog(@"endOutputFromAsciiDoctor");
+    
+    NSData *dataOutput = [[notification userInfo] objectForKey:NSFileHandleNotificationDataItem];
+    if (dataOutput != 0) {
+        NSString *string = [[NSString alloc] initWithData:dataOutput encoding:NSUTF8StringEncoding];
+        [self.asciidoctorOutput appendString:string];
+    }
+    self.currentHtml = self.asciidoctorOutput;
+}
+
+- (void)parseWithJavascript
+{
+    void(^nextAction)() = nil;
+    if (self.parseDelayTimer.isValid)
+    {
+        nextAction = self.parseDelayTimer.userInfo[@"next"];
+        [self.parseDelayTimer invalidate];
+    }
+    
     NSMutableString *html = [[NSMutableString alloc] init];
     NSString *header =
-    @"<div id='yourmother'></div>\n"
+    @"<div id='asciidoctor_output'></div>\n"
+//    @"<div id='asciidoctor_performance'></div>\n"
     @"<script src='opal.min.js'></script>\n"
     @"<script src='asciidoctor.js'></script>\n"
     @"<script>\n";
@@ -419,8 +499,13 @@ static void MPFreeHTMLRenderer(hoedown_renderer *htmlRenderer)
     [html appendString:@"';\n"];
     NSString *footer =
     @"var options = Opal.hash2(['attributes'], {attributes: ['showtitle']});\n"
+    @"var start = new Date().getTime();\n"
     @"var html = Opal.Asciidoctor.$convert(atob(content), options);\n"
-    @"document.getElementById('yourmother').innerHTML = html;\n"
+    @"document.getElementById('asciidoctor_output').innerHTML = html;\n"
+    @"var end = new Date().getTime();\n"
+    @"var performance = 'Time spent: ' + ((end - start) / 1000 ) + ' seconds';\n"
+    @"Cocoa.log(performance)"
+//    @"document.getElementById('asciidoctor_performance').innerHTML = performance;\n"
     @"</script>\n";
 
     [html appendString:footer];

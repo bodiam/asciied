@@ -787,6 +787,42 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     [self webView:sender didFinishLoadForFrame:frame];
 }
 
+- (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowScriptObject forFrame:(WebFrame *)frame
+{
+    NSLog(@"didClearWindowObject");
+    
+    // Add the controller to the script environment
+    // The "Cocoa" object will now be available to JavaScript
+    // Note that passing "self" here creates a strong reference
+    [windowScriptObject setValue:self forKey:@"Cocoa"];
+}
+
+#pragma mark - JavaScript hooks
+
+// From:
+// http://stackoverflow.com/a/2293305/1085556
+
+//this returns a nice name for the method in the JavaScript environment
++ (NSString*)webScriptNameForSelector:(SEL)sel
+{
+    if(sel == @selector(logJavaScriptString:))
+        return @"log";
+    return nil;
+}
+
+//this allows JavaScript to call the -logJavaScriptString: method
++ (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
+{
+    if(sel == @selector(logJavaScriptString:))
+        return NO;
+    return YES;
+}
+
+//this is a simple log command
+- (void)logJavaScriptString:(NSString*) logText
+{
+    NSLog(@"JavaScript: %@",logText);
+}
 
 #pragma mark - WebPolicyDelegate
 
@@ -912,8 +948,8 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     baseUrl = [NSURL fileURLWithPath:path];
     if (!self.printing)
         [self.preview.mainFrame loadHTMLString:html baseURL:baseUrl];
-    NSLog(@"-------------------------------------------------------------------------------------");
-    NSLog(@"HTML:\n[%@]\n", html);
+//    NSLog(@"-------------------------------------------------------------------------------------");
+//    NSLog(@"HTML:\n[%@]\n", html);
 }
 
 
