@@ -941,13 +941,15 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     NSURL *baseUrl = self.fileURL;
     if (!baseUrl)
         baseUrl = self.preferences.htmlDefaultDirectoryUrl;
-    
-    //
-//    baseUrl = [[NSURL alloc] initFileURLWithPath:@"/Users/bartvk/tmp/test_asciidoctor" isDirectory:YES];
+
+    // TODO ignoring preferences here: we reset baseURL so the resulting HTML can find the JavaScript files
+    // for asciidoctor and Opal.
     NSString *path = [[NSBundle mainBundle] resourcePath];
     baseUrl = [NSURL fileURLWithPath:path];
     if (!self.printing)
         [self.preview.mainFrame loadHTMLString:html baseURL:baseUrl];
+    
+    // For debugging, you might want to dump the resulting HTML here
 //    NSLog(@"-------------------------------------------------------------------------------------");
 //    NSLog(@"HTML:\n[%@]\n", html);
 }
@@ -995,6 +997,7 @@ static void (^MPGetPreviewLoadingCompletionHandler(MPDocument *doc))()
     if (editorFrame.size.width != clipWidth)
     {
         editorFrame.size.width = clipWidth;
+        // Commented out because if we enable this line, the scrolling for the preview sometimes stops working
         //self.editor.frame = editorFrame;
     }
     [self syncScrollers];
